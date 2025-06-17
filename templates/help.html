@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Help & Documentation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Help & Documentation</h1>
+    <div class="highlight-box">
+        This page explains the features of the Inflammation Prediction Tool, including prediction and exploratory data analysis (EDA).
+    </div>
+    <h2>Prediction</h2>
+    <p>
+        The prediction tool uses a <b>Random Forest Regressor</b> model to estimate inflammation marker values (such as IgA ASCA EU, IgG ASCA EU, OmpC. EU, Cbir1 EU, and ANCA EU) based on your uploaded microbiome and demographic data. A random forest is an ensemble machine learning method that builds many decision trees and averages their predictions for more accurate and robust results. When you upload your data and select a marker, the model analyzes the patterns in your features and generates a new column with predicted values for the selected inflammation marker.
+    </p>
+    <h2>Exploratory Data Analysis (EDA)</h2>
+    <p>
+        EDA helps you understand the relationships between your features and inflammation markers. When you upload a dataset containing both features and inflammation values, the tool generates <b>correlation bar plots</b> for each marker. These plots show how strongly each feature is related to a specific inflammation marker.
+    </p>
+    <h3>Understanding the Correlation Graphs</h3>
+    <ul>
+        <li><b>Positive correlation</b> (bar to the right): As the feature increases, the inflammation marker tends to increase.</li>
+        <li><b>Negative correlation</b> (bar to the left): As the feature increases, the inflammation marker tends to decrease.</li>
+        <li>The <b>length of the bar</b> shows the strength of the relationship. Longer bars mean a stronger correlation.</li>
+        <li>Only the top 20 most correlated features are shown for clarity.</li>
+    </ul>
+    <h2>Tips</h2>
+    <ul>
+        <li>For prediction, upload a CSV with all the feature columns used in model training. The tool will add a new column with predictions.</li>
+        <li>For EDA, upload a CSV with both features and inflammation marker values to generate the correlation plots.</li>
+    </ul>
+    <a href="/" class="btn" style="margin-top: 30px;">Back to Home</a>
+</div>
+{% endblock %} 

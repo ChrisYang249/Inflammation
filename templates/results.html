@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Results{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Your inflammation predictions are ready</h1>
+    <div class="highlight-box">
+        Predictions for <b>{{ marker }}</b> have been generated successfully.
+    </div>
+    <a href="{{ url_for('download_file', filename=filename) }}" class="btn">Download Results</a>
+    <br><br>
+    {% for table in tables %}
+        {{ table|safe }}
+    {% endfor %}
+    <br>
+    <a href="/" class="btn">Generate more predictions</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    window.onload = function() {
+        confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.6 }
+        });
+    };
+</script>
+{% endblock %} 

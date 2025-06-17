@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Inflammation Prediction{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Inflammation Prediction Tool</h1>
+    <h2>Upload your data to predict inflammation marker levels</h2>
+
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="highlight-box">
+            Upload a properly formatted CSV file with microbiome and demographic features to get inflammation predictions.
+        </div>
+        <div style="margin-top: 20px;">
+            <label for="model_select"><b>Select inflammation marker to predict:</b></label>
+            <select id="model_select" name="model_select" class="btn" style="margin-left: 10px; color: #fff; background: #7C0A02;">
+                {% for option in model_options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="file-upload" style="margin-top: 20px;">
+            <label for="csv-file" class="btn">Choose File</label>
+            <input type="file" id="csv-file" name="csv_file" accept=".csv" required style="display: none;">
+            <span id="file-name" style="margin-left: 10px;">No file chosen</span>
+        </div>
+        <div style="margin-top: 30px;">
+            <button type="submit" class="btn">Predict Inflammation</button>
+        </div>
+    </form>
+
+    <hr style="margin: 40px 0;">
+    <h2>Upload data to generate EDA graphs</h2>
+    <form action="/eda" method="post" enctype="multipart/form-data">
+        <div class="highlight-box">
+            Upload a CSV file with inflammation and feature data to explore trends and generate EDA graphs.
+        </div>
+        <div class="file-upload" style="margin-top: 20px;">
+            <label for="eda-csv-file" class="btn">Choose File</label>
+            <input type="file" id="eda-csv-file" name="eda_csv_file" accept=".csv" required style="display: none;">
+            <span id="eda-file-name" style="margin-left: 10px;">No file chosen</span>
+        </div>
+        <div style="margin-top: 30px;">
+            <button type="submit" class="btn">Generate EDA Graphs</button>
+        </div>
+    </form>
+</div>
+
+{% block scripts %}
+<script>
+    // Show selected file name for prediction upload
+    document.getElementById('csv-file').addEventListener('change', function(e) {
+        document.getElementById('file-name').textContent = e.target.files[0]?.name || 'No file chosen';
+    });
+    // Show selected file name for EDA upload
+    document.getElementById('eda-csv-file').addEventListener('change', function(e) {
+        document.getElementById('eda-file-name').textContent = e.target.files[0]?.name || 'No file chosen';
+    });
+</script>
+{% endblock %}
+{% endblock %} 
