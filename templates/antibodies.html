@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Antibodies Information{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Understanding Inflammation Markers and Antibodies</h1>
+    
+    <div class="antibody-section">
+        <div class="marker-grid">
+            <div class="marker-card">
+                <h3>1. IgA ASCA</h3>
+                <p class="subtitle">Anti-Saccharomyces cerevisiae antibodies</p>
+                <div class="marker-details">
+                    <p><strong>Type:</strong> Antibody (IgA)</p>
+                    <p><strong>What it measures:</strong> Immune response against the yeast <em>Saccharomyces cerevisiae</em>.</p>
+                    <p><strong>Relevance:</strong> Often elevated in Crohn's disease. IgA type suggests a mucosal (gut lining) immune reaction.</p>
+                </div>
+            </div>
+
+            <div class="marker-card">
+                <h3>2. IgG ASCA</h3>
+                <p class="subtitle">Anti-Saccharomyces cerevisiae antibodies</p>
+                <div class="marker-details">
+                    <p><strong>Type:</strong> Antibody (IgG)</p>
+                    <p><strong>What it measures:</strong> Similar to IgA ASCA, but indicates a systemic immune response.</p>
+                    <p><strong>Relevance:</strong> Commonly elevated in Crohn's disease, particularly in aggressive or complicated disease.</p>
+                </div>
+            </div>
+
+            <div class="marker-card">
+                <h3>3. OmpC</h3>
+                <p class="subtitle">Outer membrane protein C</p>
+                <div class="marker-details">
+                    <p><strong>Type:</strong> Antibody against a bacterial protein.</p>
+                    <p><strong>What it measures:</strong> Immune response against bacterial components commonly found in intestinal microbiota.</p>
+                    <p><strong>Relevance:</strong> Indicates increased gut permeability and bacterial translocation, common in Crohn's disease.</p>
+                </div>
+            </div>
+
+            <div class="marker-card">
+                <h3>4. CBir1 Fla.</h3>
+                <p class="subtitle">Anti-flagellin antibodies</p>
+                <div class="marker-details">
+                    <p><strong>Type:</strong> Antibody against bacterial flagellin, specifically CBir1.</p>
+                    <p><strong>What it measures:</strong> Immune reaction against bacterial flagellin proteins (structures bacteria use for movement).</p>
+                    <p><strong>Relevance:</strong> Commonly elevated in Crohn's disease; indicates altered immune response to gut bacteria.</p>
+                </div>
+            </div>
+
+            <div class="marker-card">
+                <h3>5. ANCA</h3>
+                <p class="subtitle">Anti-neutrophil cytoplasmic antibodies</p>
+                <div class="marker-details">
+                    <p><strong>Type:</strong> Antibody against neutrophils (a type of white blood cell).</p>
+                    <p><strong>What it measures:</strong> Immune response targeting proteins inside neutrophils.</p>
+                    <p><strong>Relevance:</strong> Often elevated in ulcerative colitis; helps distinguish from Crohn's disease.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="terminology-section">
+        <h2>Terminology Clarification</h2>
+        <div class="terminology-card">
+            <div class="term">
+                <h4>EU (Elisa Units)</h4>
+                <p>Measurement unit representing antibody concentration detected by ELISA (enzyme-linked immunosorbent assay).</p>
+            </div>
+            <div class="term">
+                <h4>Pos.</h4>
+                <p>Indicates a positive result (the antibody is present at elevated levels).</p>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3>Important Notes</h3>
+            <p>These markers are classes of antibodies produced in mucosal areas, such as the gut lining, indicating local immune activation, often secondary to inflammation.</p>
+            <p>In short, these markers collectively help clinicians diagnose and differentiate types of inflammatory bowel diseases, specifically Crohn's disease and ulcerative colitis, by indicating distinct immune reactions.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .antibody-section {
+        margin: 20px 0;
+        padding: 20px;
+    }
+    
+    .marker-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .marker-card {
+        background: #222222;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #7C0A02;
+        margin-bottom: 20px;
+    }
+    
+    .marker-card h3 {
+        color: #FF3333;
+        margin-bottom: 5px;
+    }
+    
+    .subtitle {
+        color: #999;
+        font-style: italic;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+    
+    .marker-details p {
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+    
+    .marker-details strong {
+        color: #FF3333;
+    }
+    
+    .terminology-section {
+        margin-top: 40px;
+        padding: 20px;
+        background: #222222;
+        border-radius: 8px;
+        border: 1px solid #7C0A02;
+    }
+    
+    .terminology-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    .term {
+        padding: 15px;
+        background: #111111;
+        border-radius: 6px;
+    }
+    
+    .term h4 {
+        color: #FF3333;
+        margin-bottom: 10px;
+    }
+    
+    .info-box {
+        margin-top: 30px;
+        padding: 20px;
+        background: #111111;
+        border-radius: 6px;
+    }
+    
+    .info-box h3 {
+        color: #FF3333;
+        margin-bottom: 15px;
+    }
+    
+    em {
+        font-style: italic;
+    }
+</style>
+{% endblock %} 

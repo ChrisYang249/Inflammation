@@ -7,11 +7,14 @@ import pickle
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import joblib
+import io
+import base64
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './uploads'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
-app.secret_key = 'your_secret_key'  # Needed for flashing messages
+app.secret_key = os.environ.get('SECRET_KEY', 'default-dev-key')
 
 # Mapping of model options
 MODEL_MAP = {
@@ -154,6 +157,10 @@ def uploaded_file(filename):
 @app.route('/help')
 def help_page():
     return render_template('help.html')
+
+@app.route('/antibodies')
+def antibodies_page():
+    return render_template('antibodies.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
