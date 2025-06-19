@@ -39,7 +39,7 @@ MODEL_MAP = {
         'pred_col': 'Cbir1_EU_Prediction'
     },
     'ANCA EU': {
-        'pickle': 'Anca.pkl',
+        'pickle': 'ANCAmodel.pkl',
         'target': 'ANCA EU',
         'pred_col': 'ANCA_EU_Prediction'
     }
